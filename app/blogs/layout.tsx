@@ -2,15 +2,15 @@ import Link from "next/link";
 import type { Metadata } from "next/types";
 
 export const metadata: Metadata = {
-  title: "Kevin's Home",
+  title: "Kevin's Blogs",
   description: "Welcome to Kevin's home page!",
 };
 
-export default function ProjectsLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
-  const pageTitle = " Project layout";
+export default function BlogsLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
+  const pageTitle = "Welcome to my blogs!";
   return (
-    <div>
-      <Link href={ `/projects` } className="text-blue-400">
+    <div className="border-blue-300 border-2">
+      <Link href={ `/blogs` } className="text-cyan-600">
         { pageTitle }
       </Link>
 

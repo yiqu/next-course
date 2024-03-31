@@ -1,10 +1,13 @@
-import Image from "next/image";
+import HomeNavBar from "@/app/shared/navigation/HomeNavBar";
 
 export default function Home() {
-  console.log("yo")
+  const pageTitle = "Welcome (from app/page)";
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello Kevin
+    <main className="flex min-h-screen flex-col justify-start align-top p-2">
+      <div>
+        { pageTitle }
+      </div>
+      <HomeNavBar />
     </main>
   );
 }

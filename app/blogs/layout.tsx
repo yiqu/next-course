@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next/types";
+import BLogLogo from '@/assets/graphics/blogs.png';
 
 export const metadata: Metadata = {
   title: "Kevin's Blogs",
@@ -7,14 +8,16 @@ export const metadata: Metadata = {
 };
 
 export default function BlogsLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
-  const pageTitle = "Welcome to my blogs!";
   return (
-    <div className="border-blue-300 border-2">
+    <div className="border-blue-300 border-2 flex flex-col space-y-10">
       <Link href={ `/blogs` } className="text-cyan-600">
-        { pageTitle }
+        Welcome to my blogs!
       </Link>
+      <div>
+        <img src={ BLogLogo.src } alt="Blogs Logo" className="h-40" />
+      </div>
 
-      <div className="mt-4 mb-4">
+      <div className="">
         { children }
       </div>
     </div>

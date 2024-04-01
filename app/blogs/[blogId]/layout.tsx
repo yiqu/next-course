@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "Welcome to Kevin's home page!",
 };
 
-export default function BlogPostLayout({ children, params }: Readonly<{ children: React.ReactNode; params: { slug: string } }>) {
-  const slug = params.slug;
+export default function BlogPostLayout({ children, params }: Readonly<{ children: React.ReactNode; params: { blogId: string } }>) {
+  const slug = params.blogId;
   const pageTitle = `Read time for blog ${slug}: two mins`;
   return (
     <div className="border-yellow-300 border-2">

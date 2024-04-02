@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next/types";
 import BLogLogo from '@/assets/graphics/blogs.png';
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Kevin's Blogs",
@@ -14,7 +15,7 @@ export default function BlogsLayout({ children }: Readonly<{ children: React.Rea
         Welcome to my blogs!
       </Link>
       <div>
-        <img src={ BLogLogo.src } alt="Blogs Logo" className="h-40" />
+        <Image src={ BLogLogo } alt="Blogs Logo" style={ { height: '10rem', width: '10rem' } } priority />
       </div>
 
       <div className="">

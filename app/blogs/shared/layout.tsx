@@ -10,7 +10,7 @@ export default function BlogsSharedLayout({ children }: Readonly<{ children: Rea
   const pageTitle = "Here are the shared blogs";
   return (
     <div className="border-blue-300 border-2">
-      <Link href={ `/blogs/share` } className="text-amber-300">
+      <Link href={ `/blogs/shared` } className="text-amber-300">
         { pageTitle }
       </Link>
 

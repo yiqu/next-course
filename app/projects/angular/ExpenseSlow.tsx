@@ -10,7 +10,7 @@ async function ExpensesSlowDisplay() {
   console.log("projects page");
   return (
     <div className="text-black" >
-      List of expenses:
+      List of expenses::
       <div>
         Total expenses count: { expenseResponse.totalCount }
       </div>

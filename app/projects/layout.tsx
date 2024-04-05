@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
-  const pageTitle = " Project layout";
+  const pageTitle = "Project layout";
   return (
     <div>
       <Link href={ `/projects` } className="text-blue-400">

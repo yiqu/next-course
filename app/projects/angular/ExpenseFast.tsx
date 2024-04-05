@@ -1,5 +1,7 @@
 import { getExpensesPaged } from "@/lib/expenses/expenses.server";
 import type { Expense } from "@/shared/models/expense.model";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
 import Link from "next/link";
 
 async function ExpensesFastDisplay() {
@@ -18,14 +20,17 @@ async function ExpensesFastDisplay() {
         {
           expenses.map((expense: Expense) => (
             <Link key={ expense.id } href={ `/projects/angular/${expense.id}` }>
-              <div key={ expense.id } className="flex flex-row space-x-3">
+              <Stack direction="row" justifyContent="start" alignItems="center" spacing={ 2 }>
                 <div className="w-12">
                   { expense.amount }
                 </div>
                 <div>
                   { new Date(expense.addedAtEpoch).toISOString() }
                 </div>
-              </div>
+                <Typography variant="body0">
+                  { expense.id }
+                </Typography>
+              </Stack>
             </Link>
           ))
         }

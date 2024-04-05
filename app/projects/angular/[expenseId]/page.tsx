@@ -1,15 +1,28 @@
-import { getExpensesPaged } from "@/lib/expenses/expenses.server";
-import type { Expense } from "@/shared/models/expense.model";
-import Link from "next/link";
+'use client';
 
-async function ExpenseDetailsPage() {
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import toast from "react-hot-toast";
+
+function ExpenseDetailsPage() {
+
+  const handleOnconfirmClick = () => {
+    toast.success("Expense confirmed");
+  };
+
+  const handleOnDeleteClick = () => {
+    toast.error("Expense confirmed");
+  };
 
   return (
-    <div className="text-black">
-
-
-
-    </div>
+    <Stack direction="row" spacing={ 1 }>
+      <Button variant="outlined" onClick={ handleOnconfirmClick }>
+        Confirm Expense
+      </Button>
+      <Button variant="contained" onClick={ handleOnDeleteClick } >
+        Delete Expense
+      </Button>
+    </Stack>
   );
 }
 

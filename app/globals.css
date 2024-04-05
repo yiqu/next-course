@@ -37,8 +37,17 @@ body {
 
 a {
   text-decoration: none;
+  color: #2c58a8;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+a.active {
+  background-color: #e4eaf4;
+}
+
+a.active:hover {
+  background-color: #e4eaf4;
 }

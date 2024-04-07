@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
-  const pageTitle = "Vue Project layout";
+  const pageTitle = "";
   return (
     <div>
       { pageTitle }

@@ -1,3 +1,5 @@
+'use client';
+
 import Close from '@mui/icons-material/Close';
 import Stack from "@mui/material/Stack";
 import IconButton from "@mui/material/IconButton";
@@ -22,23 +24,25 @@ function CustomToaster() {
         }
       } }
     >
-      { (t) => (
-        <ToastBar toast={ t }>
-          { ({ icon, message }) => (
-            <Stack direction="row" justifyContent="space-between" alignItems="center" width="100%">
-              <Stack direction="row" justifyContent="start" alignItems="center">
-                { icon }
-                { message }
+      {
+        (t) => (
+          <ToastBar toast={ t }>
+            { ({ icon, message }) => (
+              <Stack direction="row" justifyContent="space-between" alignItems="center" width="100%">
+                <Stack direction="row" justifyContent="start" alignItems="center">
+                  { icon }
+                  { message }
+                </Stack>
+                { t.type !== 'loading' && (
+                  <IconButton size='small' onClick={ () => toast.remove(t.id) }>
+                    <Close fontSize='small' />
+                  </IconButton>
+                ) }
               </Stack>
-              { t.type !== 'loading' && (
-                <IconButton size='small' onClick={ () => toast.remove(t.id) }>
-                  <Close fontSize='small' />
-                </IconButton>
-              ) }
-            </Stack>
-          ) }
-        </ToastBar>
-      ) }
+            ) }
+          </ToastBar>
+        )
+      }
     </Toaster>
   );
 }
@@ -64,5 +68,5 @@ export function CustomToaster2() {
         }
       } }
     ></Toaster>
-  )
+  );
 }

@@ -1,4 +1,5 @@
 import HomeNavBar from "@/app/shared/navigation/HomeNavBar";
+import ServerOrClientComponent1 from "@/shared/components/example-client-or-server-components/ServerOrClientComponent1";
 import Typography from "@mui/material/Typography";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <Typography variant="h4" component="h1" sx={ { mb: 2 } }>
         { pageTitle }
       </Typography>
+      <ServerOrClientComponent1 />
       <HomeNavBar />
     </main>
   );

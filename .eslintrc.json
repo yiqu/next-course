@@ -3,7 +3,8 @@
     "next/core-web-vitals",
     "next",
     "@remix-run/eslint-config",
-    "plugin:@next/next/recommended"
+    "plugin:@next/next/recommended",
+    "prettier"
   ],
   "plugins": [
     "mui-path-imports"
@@ -23,7 +24,27 @@
     ],
     "react/jsx-curly-spacing": [
       1,
-      "always"
+      {
+        "when": "always",
+        "children": true
+      },
+      {
+        "spacing": {
+          "objectLiterals": "never"
+        }
+      }
+    ],
+    "react/jsx-equals-spacing": [
+      1,
+      "never"
+    ],
+    "react/jsx-tag-spacing": [
+      1,
+      {
+        "closingSlash": "never",
+        "beforeSelfClosing": "always",
+        "afterOpening": "never"
+      }
     ],
     "no-use-before-define": [
       0,

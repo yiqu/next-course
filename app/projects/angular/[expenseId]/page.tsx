@@ -1,17 +1,17 @@
 'use client';
 
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import toast from "react-hot-toast";
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+
+import toast from 'react-hot-toast';
 
 function ExpenseDetailsPage() {
-
   const handleOnconfirmClick = () => {
-    toast.success("Expense confirmed");
+    toast.success('Expense confirmed');
   };
 
   const handleOnDeleteClick = () => {
-    toast.error("Expense confirmed");
+    toast.error('Expense confirmed');
   };
 
   return (
@@ -19,7 +19,7 @@ function ExpenseDetailsPage() {
       <Button variant="outlined" onClick={ handleOnconfirmClick }>
         Confirm Expense
       </Button>
-      <Button variant="contained" onClick={ handleOnDeleteClick } >
+      <Button variant="contained" onClick={ handleOnDeleteClick }>
         Delete Expense
       </Button>
     </Stack>

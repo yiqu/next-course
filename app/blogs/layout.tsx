@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next/types";
 import BLogLogo from '@/assets/graphics/blogs.png';
 import Image from "next/image";
+import ClientComponent1 from "@/shared/components/example-client-components/ClientComponent1";
 
 export const metadata: Metadata = {
   title: "Kevin's Blogs",
@@ -17,6 +18,8 @@ export default function BlogsLayout({ children }: Readonly<{ children: React.Rea
       <div>
         <Image src={ BLogLogo } alt="Blogs Logo" style={ { height: '10rem', width: '10rem' } } priority />
       </div>
+
+      <ClientComponent1 />
 
       <div className="">
         { children }

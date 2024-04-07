@@ -1,27 +1,22 @@
-import type { Metadata } from "next";
-import "./globals.css";
-// import "./fonts.css";
-import Link from "next/link";
+import type { Metadata } from 'next';
+import './globals.css';
+import Link from 'next/link';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { appTheme } from "@/theme/AppTheme";
-import Typography from "@mui/material/Typography";
-import { CustomToaster2 } from "@/shared/components/CustomToaster";
-import Close from "@mui/icons-material/Close";
-import Stack from "@mui/material/Stack";
-import IconButton from "@mui/material/IconButton";
-import type { Toast } from "react-hot-toast";
-import toast, { ToastBar } from "react-hot-toast";
+import { appTheme } from '@/theme/AppTheme';
+import Typography from '@mui/material/Typography';
+import CustomToaster from '@/shared/components/CustomToaster';
+import { StoreProvider } from './StoreProvider';
+import Box from "@mui/material/Box";
 
 export const metadata: Metadata = {
   title: "Kevin's Home",
   description: "Welcome to Kevin's home page!",
 };
 
-export default function RootLayout({ children }: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  console.log('Root layout page');
   return (
     <html lang="en">
       <body>
@@ -29,15 +24,12 @@ export default function RootLayout({ children }: Readonly<{
           <ThemeProvider theme={ appTheme }>
             <CssBaseline />
             <Typography variant="h1">
-              <Link href="/">
-                Home
-              </Link>
+              <Link href="/">Home</Link>
             </Typography>
-            <div>
-              { children }
-            </div>
-            <CustomToaster2 />
-
+            <Box sx={ { display: 'flex' } } id="main-content">
+              <StoreProvider>{ children }</StoreProvider>
+            </Box>
+            <CustomToaster />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

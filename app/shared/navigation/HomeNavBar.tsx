@@ -10,6 +10,9 @@ function HomeNavBar() {
       <Link href="/blogs" className={ styles.text }>
         Blogs
       </Link>
+      <Link href="/pokemons" className={ styles.text }>
+        Pokemons
+      </Link>
     </div>
   );
 }

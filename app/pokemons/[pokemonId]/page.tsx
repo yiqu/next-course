@@ -10,8 +10,7 @@ import LinearProgress from "@mui/material/LinearProgress";
 import Box from '@mui/material/Box';
 import Skeleton from "@mui/material/Skeleton";
 
-function PokemonDetails() {
-  const params = useParams<{ pokemonId: string }>();
+function PokemonDetails({params}: {params: {pokemonId: string}}) {
   const id: string = params.pokemonId;
 
   const { data, isLoading, isFetching, refetch } = useFetchPokemonQuery(id);

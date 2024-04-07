@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 
 import toast from 'react-hot-toast';
 
-function ExpenseDetailsPage() {
+function ExpenseDetailsPage({params}: {params: {expenseId: string}}) {
   const handleOnconfirmClick = () => {
     toast.success('Expense confirmed');
   };

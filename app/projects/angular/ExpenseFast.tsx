@@ -13,19 +13,18 @@ async function ExpensesFastDisplay() {
     <div className="text-black">
       List of expenses:
       <Alert>
-        <Typography variant="body0">
-          Total expenses count: { expenseResponse.totalCount }
-        </Typography>
+        <Typography variant="body0">Total expenses count: { expenseResponse.totalCount }</Typography>
       </Alert>
       <div className="flex flex-col space-y-2">
+        <Link href={ `/projects/angular/notfoundone` }>
+          <Stack direction="row" justifyContent="start" alignItems="center" spacing={ 2 }>
+            <div className="w-12">0</div>
+            <Typography variant="body0">Example for Not Found</Typography>
+          </Stack>
+        </Link>
         { expenses.map((expense: Expense) => (
           <Link key={ expense.id } href={ `/projects/angular/${expense.id}` }>
-            <Stack
-              direction="row"
-              justifyContent="start"
-              alignItems="center"
-              spacing={ 2 }
-            >
+            <Stack direction="row" justifyContent="start" alignItems="center" spacing={ 2 }>
               <div className="w-12">{ expense.amount }</div>
               <div>{ new Date(expense.addedAtEpoch).toISOString() }</div>
               <Typography variant="body0">{ expense.id }</Typography>

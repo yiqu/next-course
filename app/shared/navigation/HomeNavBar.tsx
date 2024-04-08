@@ -13,6 +13,9 @@ function HomeNavBar() {
       <Link href="/pokemons" className={ styles.text }>
         Pokemons
       </Link>
+      <Link href="/users" className={ styles.text }>
+        Users
+      </Link>
     </div>
   );
 }

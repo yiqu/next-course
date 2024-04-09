@@ -4,15 +4,16 @@ import NewUserForm from './NewUserForm';
 import UsersList from './UsersList';
 import { Suspense } from 'react';
 import Skeleton from '@mui/material/Skeleton';
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import RefreshUsers from './RefreshUsers';
 
 export default function UsersPage() {
   return (
     <Box>
       <Stack direction="column" justifyContent="start" spacing={ 3 }>
         <NewUserForm />
-
+        <RefreshUsers />
         <div>
           <Suspense fallback={ <UsersListLoading /> }>
             <UsersList />

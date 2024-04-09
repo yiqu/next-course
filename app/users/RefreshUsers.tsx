@@ -1,11 +1,11 @@
 'use client';
 
+import { revalidateByPath } from '@/lib/cache/revalidate';
 import Button from '@mui/material/Button';
-import { revalidatePath } from 'next/cache';
 
 export default function RefreshUsers() {
   const handleRefreshCache = () => {
-    revalidatePath('/users', 'layout');
+    revalidateByPath('/users');
   };
 
   return (

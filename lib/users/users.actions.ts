@@ -17,7 +17,7 @@ export async function addUser(prevState: any, formData: FormData) {
       data: data,
     });
 
-    revalidatePath('/users');
+    //revalidatePath('/users', 'layout');
     
     return {
       status: 'success',

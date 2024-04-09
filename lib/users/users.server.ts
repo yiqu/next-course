@@ -2,8 +2,6 @@ import { Prisma } from '@prisma/client';
 import prisma from '../db';
 
 export async function getAllUsers() {
-  //delay
-  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   try {
     const res = await prisma.user.findMany();

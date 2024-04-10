@@ -1,3 +1,4 @@
+import type { Route } from "next";
 import Link from "next/link";
 
 async function Projects() {
@@ -17,7 +18,7 @@ async function Projects() {
           pokemonsJson.results.map((pokemon) => (
             <Link
               key={ pokemon.name }
-              href={ `/projects/react/${pokemon.name}` }
+              href={ (`/projects/react/${pokemon.name}`) as Route }
             >
               <div key={ pokemon.name }>
                 { pokemon.name }

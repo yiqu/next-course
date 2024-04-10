@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 import styles from './HomeNavBar.module.css';
 
 function HomeNavBar() {
@@ -15,6 +15,9 @@ function HomeNavBar() {
       </Link>
       <Link href="/users" className={ styles.text }>
         Users
+      </Link>
+      <Link href="/quotes" className={ styles.text }>
+        Quotes
       </Link>
     </div>
   );

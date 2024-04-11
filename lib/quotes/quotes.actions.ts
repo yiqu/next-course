@@ -3,6 +3,7 @@ import { z } from 'zod';
 import type { QuotePost } from '@/shared/models/firebase.model';
 import { KQFIREBASEURL } from '@/app/shared/constants';
 import type { FormActionState } from '@/shared/models/form-action.model';
+import { revalidatePath } from 'next/cache';
 
 export async function addQuote(prevState: FormActionState<{name: string}>, formData: FormData) {
   const rawFormData = {
@@ -20,10 +21,12 @@ export async function addQuote(prevState: FormActionState<{name: string}>, formD
     });
     const result = await response.json();
 
+    revalidatePath('/quotes');
     return {
       status: 'success',
       message: 'Quote added successfully',
       payload: result,
+      addedDate: Date.now()
     };
   } catch (e) {
     if (e instanceof z.ZodError) {

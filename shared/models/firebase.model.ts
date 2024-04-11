@@ -19,3 +19,8 @@ export interface QuotePost {
   date: number;
   quote: string;
 }
+
+export interface QuotePostForm {
+  author: string;
+  quote: string;
+}

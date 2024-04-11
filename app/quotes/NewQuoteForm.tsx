@@ -36,7 +36,7 @@ export default function NewQuoteForm() {
   );
 
   return (
-    <Stack p={ 3 } border="1px solid #eee">
+    <Stack p={ 3 } border="1px solid #eee" width="30rem">
       { state.message && <Alert severity={ state.status as any }>{ state.message }</Alert> }
       <form action={ addQuoteFormAction }>
         <Stack spacing={ 2 }>

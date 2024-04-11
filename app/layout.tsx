@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  console.log('Root layout page');
+  console.log('console log: Root layout page');
   return (
     <html lang="en">
       <body>

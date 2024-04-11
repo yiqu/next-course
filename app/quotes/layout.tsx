@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function QuotesLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div>
-      <Stack>
-        <Link href="/quotes">Quotes</Link>
+    <Stack width="100%">
+      <Link href="/quotes">Quotes</Link>
+      <Stack direction="column" width="100%">
         { children }
       </Stack>
-    </div>
+    </Stack>
   );
 }

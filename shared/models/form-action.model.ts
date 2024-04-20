@@ -3,3 +3,8 @@ export interface FormActionState<T> {
   message: string;
   payload: T | null;
 }
+
+export interface FormActionDelete {
+  status: string;
+  message: string;
+}

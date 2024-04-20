@@ -12,6 +12,7 @@ export interface FirebaseQuote {
   comments: IFirebaseData<FirebaseQuotesComment>;
   date: number;
   quote: string;
+  index?: number;
 }
 
 export interface QuotePost {

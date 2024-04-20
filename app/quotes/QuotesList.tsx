@@ -3,6 +3,7 @@ import { KQFIREBASEURL } from '../shared/constants';
 import type { IFirebaseData, FirebaseQuote } from '@/shared/models/firebase.model';
 import Quote from './Quote';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
 
 export default async function QuotesList() {
   //sleep
@@ -23,9 +24,10 @@ export default async function QuotesList() {
 
   return (
     <Stack direction="column" spacing={ 3 }>
+      <Typography>There are { quotesList.length } quotes in the database.</Typography>
       <List sx={ { maxWidth: '30rem' } }>
-        { quotesList.map((quote) => {
-          return <Quote key={ quote.id } quote={ quote } />;
+        { quotesList.map((quote, index) => {
+          return <Quote key={ quote.id } quote={ quote } index={ index + 1 } />;
         }) }
       </List>
     </Stack>
